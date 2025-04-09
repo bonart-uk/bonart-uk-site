@@ -1,19 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.14.0/.schema/devbox.schema.json",
-  "packages": [
-    "nodejs@22"
-  ],
+  "packages": ["nodejs@22"],
   "env": {
     "DEVBOX_COREPACK_ENABLED": "true"
   },
   "shell": {
-    "init_hook": [
-      "pnpm install"
-    ],
+    "init_hook": ["pnpm install"],
     "scripts": {
-      "dev": [
-        "pnpm dev"
-      ]
+      "dev": ["pnpm dev"]
     }
   }
 }
