@@ -1,6 +1,8 @@
 // storage-adapter-import-placeholder
 import { postgresAdapter } from '@payloadcms/db-postgres'
 
+import { resendAdapter } from '@payloadcms/email-resend'
+
 import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
@@ -91,4 +93,9 @@ export default buildConfig({
     },
     tasks: [],
   },
+  email: resendAdapter({
+    defaultFromAddress: process.env.EMAIL_DEFAULT_FROM_ADDRESS || '',
+    defaultFromName: process.env.EMAIL_DEFAULT_FROM_NAME || '',
+    apiKey: process.env.RESEND_API_KEY || '',
+  }),
 })
