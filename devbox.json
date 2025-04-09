@@ -7,7 +7,7 @@
   "shell": {
     "init_hook": ["pnpm install"],
     "scripts": {
-      "dev": ["pnpm dev"]
+      "dev": ["pnpm dev --turbopack"]
     }
   }
 }
