@@ -77,8 +77,8 @@ importers:
         specifier: ^16.11.0
         version: 16.11.0
       lucide-react:
-        specifier: ^0.378.0
-        version: 0.378.0(react@19.0.0)
+        specifier: ^0.507.0
+        version: 0.507.0(react@19.0.0)
       next:
         specifier: 15.2.3
         version: 15.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.77.4)
@@ -88,6 +88,9 @@ importers:
       payload:
         specifier: 3.31.0
         version: 3.31.0(graphql@16.11.0)(typescript@5.7.3)
+      pg-cloudflare:
+        specifier: ^1.2.5
+        version: 1.2.5
       prism-react-renderer:
         specifier: ^2.4.1
         version: 2.4.1(react@19.0.0)
@@ -98,8 +101,8 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       react-hook-form:
-        specifier: 7.45.4
-        version: 7.45.4(react@19.0.0)
+        specifier: ^7.56.1
+        version: 7.56.1(react@19.0.0)
       sharp:
         specifier: 0.32.6
         version: 0.32.6
@@ -5651,13 +5654,13 @@ packages:
         integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==,
       }
 
-  lucide-react@0.378.0:
+  lucide-react@0.507.0:
     resolution:
       {
-        integrity: sha512-u6EPU8juLUk9ytRcyapkWI18epAv3RU+6+TC23ivjR0e+glWKBobFeSgRwOIJihzktILQuy6E0E80P2jVTDR5g==,
+        integrity: sha512-XfgE6gvAHwAtnbUvWiTTHx4S3VGR+cUJHEc0vrh9Ogu672I1Tue2+Cp/8JJqpytgcBHAB1FVI297W4XGNwc2dQ==,
       }
     peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   math-intrinsics@1.1.0:
     resolution:
@@ -6719,14 +6722,14 @@ packages:
     peerDependencies:
       react: '>=16.13.1'
 
-  react-hook-form@7.45.4:
+  react-hook-form@7.56.1:
     resolution:
       {
-        integrity: sha512-HGDV1JOOBPZj10LB3+OZgfDBTn+IeEsNOKiq/cxbQAIbKaiJUe/KV8DBUzsx0Gx/7IG/orWqRRm736JwOfUSWQ==,
+        integrity: sha512-qWAVokhSpshhcEuQDSANHx3jiAEFzu2HAaaQIzi/r9FNPm1ioAvuJSD4EuZzWd7Al7nTRKcKPnBKO7sRn+zavQ==,
       }
-    engines: { node: '>=12.22.0' }
+    engines: { node: '>=18.0.0' }
     peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
+      react: ^16.8.0 || ^17 || ^18 || ^19
 
   react-image-crop@10.1.8:
     resolution:
@@ -11951,7 +11954,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-react@0.378.0(react@19.0.0):
+  lucide-react@0.507.0(react@19.0.0):
     dependencies:
       react: 19.0.0
 
@@ -12451,8 +12454,7 @@ snapshots:
 
   peek-readable@5.4.2: {}
 
-  pg-cloudflare@1.2.5:
-    optional: true
+  pg-cloudflare@1.2.5: {}
 
   pg-connection-string@2.8.5: {}
 
@@ -12724,7 +12726,7 @@ snapshots:
       '@babel/runtime': 7.27.1
       react: 19.0.0
 
-  react-hook-form@7.45.4(react@19.0.0):
+  react-hook-form@7.56.1(react@19.0.0):
     dependencies:
       react: 19.0.0
 
