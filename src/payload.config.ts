@@ -1,11 +1,12 @@
 // storage-adapter-import-placeholder
 import { postgresAdapter } from '@payloadcms/db-postgres'
-
 import { resendAdapter } from '@payloadcms/email-resend'
+import { s3Storage } from '@payloadcms/storage-s3'
 
 import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
+import fs from 'fs'
 import { fileURLToPath } from 'url'
 
 import { Categories } from './collections/Categories'
@@ -64,6 +65,9 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
+      ssl: {
+        ca: fs.readFileSync('cert/supabase.crt').toString(),
+      },
     },
   }),
   collections: [Pages, Posts, Media, Categories, Users],
@@ -71,7 +75,23 @@ export default buildConfig({
   globals: [Header, Footer],
   plugins: [
     ...plugins,
-    // storage-adapter-placeholder
+    s3Storage({
+      collections: {
+        media: {
+          prefix: 'media',
+        },
+      },
+      bucket: process.env.S3_BUCKET || '',
+      config: {
+        region: process.env.S3_REGION,
+        endpoint: process.env.S3_ENDPOINT,
+        forcePathStyle: true,
+        credentials: {
+          accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
+        },
+      },
+    }),
   ],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
