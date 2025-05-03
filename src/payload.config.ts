@@ -6,7 +6,6 @@ import { s3Storage } from '@payloadcms/storage-s3'
 import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
-import fs from 'fs'
 import { fileURLToPath } from 'url'
 
 import { Categories } from './collections/Categories'
@@ -66,7 +65,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
       ssl: {
-        ca: fs.readFileSync('cert/supabase.crt').toString(),
+        ca: process.env.PG_SERVER_SSL_CERT || '',
       },
     },
   }),
